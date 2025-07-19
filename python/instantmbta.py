@@ -118,7 +118,11 @@ if __name__ == '__main__':
     parser.add_argument("stop2id", help="Stop ID for second stop to display")
     parser.add_argument("stop2name", help="Human friendly name for stop2 being displayed")
     parser.add_argument("--once", action="store_true", help="Run once instead of continuously")
-    parser.add_argument("--log-level", default="INFO", choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"], help="Set the logging level")
+    # Get default log level from environment variable
+    from config import config
+    default_log_level = config.log_level
+    
+    parser.add_argument("--log-level", default=default_log_level, choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"], help="Set the logging level")
     args = parser.parse_args()
     route_id = args.routeid
     route_name = args.routename

@@ -128,7 +128,34 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-python/secret_constants.py
+# Project-specific files
+python/.env
 python/*.log.*
 python/*.log
+python/instant.log
+python/instant.log.*
+
+# OS-specific files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+
+# Local configuration files
+config.local.py
+settings.local.py
